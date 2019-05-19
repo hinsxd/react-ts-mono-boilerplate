@@ -7,7 +7,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "version": "0.0.1",
   "description": "A fullstack boilerplate with Yarn workspaces, Lerna, React, TypeORM, Type-GraphQL, Apollo.",
   "repository": "https://github.com/hinsxd/react-ts-mono-boilerplate",
   "author": "hinsxd <hins.xd@hotmail.com>",

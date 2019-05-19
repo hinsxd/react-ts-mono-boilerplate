@@ -1,0 +1,10 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "description": "Backend boilerplate with Typeorm, Type-GraphQL, apollo-server-express.",
+  "repository": {
+    "url": "https://github.com/hinsxd/react-ts-mono-boilerplate",
+    "type": "git",
+    "directory": "packages/server"
+  }
+}

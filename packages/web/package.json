@@ -1,7 +1,12 @@
 {
   "name": "web",
   "version": "0.1.0",
-  "private": true,
+  "description": "Frontend boilerplate with React, Apollo Client, Typescript.",
+  "repository": {
+    "url": "https://github.com/hinsxd/react-ts-mono-boilerplate",
+    "type": "git",
+    "directory": "packages/web"
+  },
   "dependencies": {
     "@types/jest": "24.0.13",
     "@types/node": "12.0.2",
