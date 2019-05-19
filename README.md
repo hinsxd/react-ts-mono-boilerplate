@@ -13,7 +13,10 @@ Make sure Docker is running.
 ```bash
 $ git clone https://github.com/hinsxd/react-ts-mono-boilerplate.git --depth=1 myProject
 $ cd myProject
+
+# Initialize git for your peoject
 $ rm -rf .git && git init
+# Install dependencies
 $ yarn
 ```
 
@@ -24,7 +27,7 @@ $ yarn
 $ cd packages/server
 $ docker-compose up -d # -d means run in background
 
-# start server at http://localhost:4000/graphql
+# Start server at http://localhost:4000/graphql
 $ yarn start
 ```
 
