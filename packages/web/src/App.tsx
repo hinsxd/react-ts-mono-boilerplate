@@ -12,9 +12,7 @@ const App: React.FC = () => {
   const addUser = useAddUserMutation({
     refetchQueries: [{ query: UsersDocument }]
   });
-  const deleteUser = useDeleteUserMutation({
-    refetchQueries: [{ query: UsersDocument }]
-  });
+  const deleteUser = useDeleteUserMutation({ refetchQueries: [{ query: UsersDocument }]})
   const [submitError, setSubmitError] = useState<null | string>(null);
   const [email, setEmail] = useState('');
 
@@ -27,7 +25,7 @@ const App: React.FC = () => {
     try {
       setSubmitError(null);
       await addUser({ variables: { email } });
-      setEmail('');
+      setEmail('')
     } catch (err) {
       setSubmitError(err.message);
     }
@@ -36,11 +34,7 @@ const App: React.FC = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
-          value={email}
-          onChange={handleChange}
-          placeholder="Enter email"
-        />
+        <input value={email} onChange={handleChange} placeholder="Enter email" />
         <button type="submit">Add user</button>
         <span>{submitError}</span>
       </form>
@@ -48,16 +42,9 @@ const App: React.FC = () => {
         data.users &&
         data.users.map(user => (
           <div key={user.id}>
-            <span>
-              {user.id} - {user.email}
-            </span>
-            <button
-              onClick={async () => {
-                await deleteUser({ variables: { id: user.id } });
-              }}
-            >
-              [X]
-            </button>
+            <span>{user.id} - {user.email}</span><button onClick={async () => {
+              await deleteUser({variables:{id:user.id}})
+            }}>[X]</button>
           </div>
         ))}
       {loading && <div>Loading</div>}
