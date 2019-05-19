@@ -6,5 +6,19 @@
     "url": "https://github.com/hinsxd/react-ts-mono-boilerplate",
     "type": "git",
     "directory": "packages/server"
+  },
+  "scripts": {
+    "start": "ts-node-dev -r tsconfig-paths/register --respawn --no-notify src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.2",
+    "ts-node-dev": "^1.0.0-pre.39",
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "dotenv-safe": "^6.1.0",
+    "pg": "^7.11.0",
+    "typeorm": "^0.2.17"
   }
 }
