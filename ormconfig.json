@@ -4,5 +4,9 @@
   "port": 5432,
   "username": "postgres",
   "password": "postgres",
-  "database": "postgres"
+  "database": "postgres",
+  "synchronize": true,
+  "dropSchema": false,
+  "logging": true,
+  "entities": ["src/entity/**/*.*"]
 }
