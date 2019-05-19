@@ -27,14 +27,13 @@ async function bootstrap() {
     container: Container,
     validate: false
   });
-  // console.log(printSchema(schema));
   const server = new ApolloServer({
     schema,
     context: ({ req }: any) => ({
       req
     })
   });
-  server.applyMiddleware({ app, cors: false }); // app is from an existing express app
+  server.applyMiddleware({ app, cors: false });
   app.listen({ port: 4000 }, () =>
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
   );

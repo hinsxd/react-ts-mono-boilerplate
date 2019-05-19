@@ -31,9 +31,26 @@ $ docker-compose up -d # -d means run in background
 $ yarn start
 ```
 
-### 3. Start React dev server
+### 3. Codegen (graphql-code-generator) and start React dev server
 
 ```bash
 $ cd packages/web
+$ yarn codegen
 $ yarn start
 ```
+
+### 4. Adding resolvers
+
+All files with filename `packages/server/modules/**/resolver.*` will be automatically added to resolvers.
+
+In this boilerplate, each entity has a folder under `modoles` so as to group up the codes. Feel free to change the structure and edit `index.ts` to suit your needs.
+
+```typescript
+const schema = await buildSchema({
+  // Explicitly import resolvers or specific a path
+  resolvers: [__dirname + '/modules/**/resolver.*']
+  // ...
+});
+```
+
+Server will then restart and new schema will be ready. Now add new queries/mutations in `packages/web/apollo/entity`, followed by `yarn codegen`. This will generate new types and hooks ready to use.
