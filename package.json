@@ -1,6 +1,6 @@
 {
   "name": "react-ts-mono-boilerplate",
-  "private": false,
+  "private": true,
   "devDependencies": {
     "lerna": "^3.13.4"
   },
@@ -9,7 +9,6 @@
   ],
   "version": "0.0.1",
   "description": "A fullstack boilerplate with Yarn workspaces, Lerna, React, TypeORM, Type-GraphQL, Apollo.",
-  "main": "index.js",
   "repository": "https://github.com/hinsxd/react-ts-mono-boilerplate",
   "author": "hinsxd <hins.xd@hotmail.com>",
   "license": "MIT"
