@@ -5,7 +5,8 @@ import {
   Args,
   ArgsType,
   Field,
-  Arg
+  Arg,
+  ID
 } from 'type-graphql';
 import { Repository } from 'typeorm';
 import { InjectRepository } from 'typeorm-typedi-extensions';
@@ -16,6 +17,11 @@ import { validate } from 'class-validator';
 class AddUserArgs {
   @Field()
   email: string;
+}
+@ArgsType()
+class DeleteUserAtgs {
+  @Field(type => ID)
+  id: string;
 }
 
 @Resolver(User)
@@ -39,6 +45,16 @@ export class UserResolver {
       return this.userRepo.save({ email });
     } catch (err) {
       throw new Error('Cannot create user with email = ' + email);
+    }
+  }
+
+  @Mutation(() => Boolean)
+  async deleteUser(@Args() { id }: DeleteUserAtgs): Promise<Boolean> {
+    try {
+      await this.userRepo.delete({ id });
+      return true;
+    } catch (err) {
+      throw new Error(err);
     }
   }
 }
