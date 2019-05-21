@@ -24,6 +24,7 @@ async function bootstrap() {
   const schema = await buildSchema({
     resolvers: [__dirname + '/modules/**/resolver.*'],
     // register 3rd party IOC container
+    emitSchemaFile: __dirname + '/schema.graphql',
     container: Container,
     validate: false
   });

@@ -1,5 +1,5 @@
-schema: http://localhost:4000/graphql
-documents: ./src/apollo/**/*.{ts,tsx}
+schema: packages/server/src/schema.graphql
+documents: packages/web/src/apollo/**/*.{ts,tsx}
 overwrite: true
 generates:
   ./src/types/graphql.tsx:

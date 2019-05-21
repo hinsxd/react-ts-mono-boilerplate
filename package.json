@@ -2,11 +2,20 @@
   "name": "react-ts-mono-boilerplate",
   "private": true,
   "devDependencies": {
+    "@graphql-codegen/add": "^1.1.3",
+    "@graphql-codegen/cli": "^1.1.3",
+    "@graphql-codegen/typescript": "^1.1.3",
+    "@graphql-codegen/typescript-operations": "^1.1.3",
+    "@graphql-codegen/typescript-react-apollo": "^1.1.3",
     "lerna": "^3.13.4"
   },
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "codegen": "graphql-codegen",
+    "codegen:watch": "graphql-codegen --watch"
+  },
   "description": "A fullstack boilerplate with Yarn workspaces, Lerna, React, TypeORM, Type-GraphQL, Apollo.",
   "repository": "https://github.com/hinsxd/react-ts-mono-boilerplate",
   "author": "hinsxd <hins.xd@hotmail.com>",
