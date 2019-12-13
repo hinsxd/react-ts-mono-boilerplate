@@ -9,10 +9,10 @@ import {
 
 const App: React.FC = () => {
   const { data, loading } = useUsersQuery();
-  const addUser = useAddUserMutation({
+  const [addUser] = useAddUserMutation({
     refetchQueries: [{ query: UsersDocument }]
   });
-  const deleteUser = useDeleteUserMutation({
+  const [deleteUser] = useDeleteUserMutation({
     refetchQueries: [{ query: UsersDocument }]
   });
   const [submitError, setSubmitError] = useState<null | string>(null);
